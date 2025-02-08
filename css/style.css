@@ -8,7 +8,7 @@
 }
 html{
 	scroll-behavior: smooth;
-
+	overflow-x:clip !important;
 	--dark-bg-clr: #000000;
 	--primary-clr: #fa5a20;
 	--light-heading-clr: #f9f9f9;
