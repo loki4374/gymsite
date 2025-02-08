@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <title> Felix Fitness Club</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="service provider, webdevelopment,cad design, 3d models, Graphic designs, web maintaning" name="keywords">
+    <meta name="description" content="At CleverMind, we offer expert web development, CAD design, and personalized solutions with no hidden charges. Our dedicated team is available 24/7 to bring your ideas to life with precision and creativity. Partner with us for outstanding results that drive success." />
+
+	<!-- Icon Font Stylesheet -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+	
+	<!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <!-- <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
+	<link href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/page.css">
+
+</head>
+
+<body>
+
+    <section class="home" id="home" >
+	
+        <div class="home-overlay"></div>
+        <a href="https://wa.me/919842042148" target="_blank" class="chat-logo"><img src="images/home/whatsapp.png" alt="wa-img"></a>
+        <!--   === Main Navbar Starts ===   -->
+        <nav class="main-navbar">
+            <div class="logo">
+                <img src="images/home/logo.png">
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="bmi-cal.html">BMI</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="#" class="join-us-btn-wrapper">
+                <button class="btn join-us-btn">Join Us</button>
+            </a>
+            <div class="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+       
+        <div class="banner">
+            <div class="banner-left-contents">
+                <img src="images/home/hero-logo.png" alt="">
+            </div>
+        </div>
+    
+    </section>
+
+    <!-- Breadcrumb Section End -->
+
+    <!-- BMI Calculator Section Begin -->
+    <section class="bmi-calculator-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title chart-title">
+                        <span>check your body</span>
+                        <h2>BMI CALCULATOR CHART</h2>
+                    </div>
+                    <div class="chart-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Bmi</th>
+                                    <th>WEIGHT STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="point">Below 18.5</td>
+                                    <td>Underweight</td>
+                                </tr>
+                                <tr>
+                                    <td class="point">18.5 - 24.9</td>
+                                    <td>Healthy</td>
+                                </tr>
+                                <tr>
+                                    <td class="point">25.0 - 29.9</td>
+                                    <td>Overweight</td>
+                                </tr>
+                                <tr>
+                                    <td class="point">30.0 - and Above</td>
+                                    <td>Obese</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="section-title chart-calculate-title">
+                        <span>check your body</span>
+                        <h2>CALCULATE YOUR BMI</h2>
+                    </div>
+                    <div class="chart-calculate-form">
+                        <p> A BMI calculator is a tool that estimates a person's body fat percentage based on 
+                            their height and weight. BMI stands for Body Mass Index. </p>
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" id="height" placeholder="Height / cm" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="weight" placeholder="Weight / kg" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="age" placeholder="Age" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <select required id="gender">
+                                        <option value="">Sex</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button type="submit" onclick="calculateBMI()">Calculate</button>
+                                </div>
+                                <div class="col-lg-12" id="bmi">
+                                    <span id="result"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BMI Calculator Section End -->
+
+    
+    <!-- Footer Start -->
+<div class="container-fluid footer-svg text-light footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+	<div class="container py-5">
+		<div class="row g-5">
+			<div class="col-lg-3 col-md-6">
+				<h4 class="text-white mb-4">Contact Details</h4>
+				<!-- <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i></p> -->
+				<p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9842042148</p>
+				<p class="mb-2"><i class="fa fa-envelope me-3"></i>takeintamila@gmail.com</p>
+				<p class="mb-2"><i class="fas fa-map-marker-alt me-3"></i>#135,4th Avanue, Sri ragavendira city, Neycer, Vadalur, TamilaNadu 60703</p>
+				<div class="d-flex pt-2">
+					<a class="btn btn-square btn-outline-light rounded-circle me-2" href="https://www.facebook.com/felixfitnessclub/"><i class="fab fa-facebook-f"></i></a>
+					<a class="btn btn-square btn-outline-light rounded-circle me-2" href="https://twitter.com/felixfitnessclb"><i class="fab fa-twitter"></i></a>
+					<a class="btn btn-square btn-outline-light rounded-circle me-2" href="https://www.instagram.com/explore/locations/955580211/felix-fitness-club/"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<h4 class="text-white mb-4">Services</h4>
+				<a class="btn btn-link" href="">Body Building</a>
+				<a class="btn btn-link" href="">Yoga</a>
+				<a class="btn btn-link" href="">Aerobics</a>
+				<a class="btn btn-link" href="">Silambam</a>
+				<a class="btn btn-link" href="">Personal Training</a>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<h4 class="text-white mb-4">Quick Links</h4>
+				<a class="btn btn-link" href="">About Us</a>
+				<a class="btn btn-link" href="">Contact Us</a>
+				<a class="btn btn-link" href="">Our Services</a>
+				<a class="btn btn-link" href="">Packages</a>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<h4 class="text-white mb-4">Newsletter</h4>
+				<p>If you have any feedback,send below.</p>
+				<div class="position-relative w-100">
+					<input class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your Feedback">
+					<button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Send</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Footer End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.barfiller.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="script.js"></script>
+
+
+
+
+</body>
+
+</html>

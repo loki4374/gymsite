@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--Created by Tivotal-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Contact Us Form</title>
+
+    <!--font awesome(for icons)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+
+<style>
+
+    /* Google Fonts(Poppins) */
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+    * {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --dark: #34495E;
+      --light: #ffffff;
+      --success: #0ABF30;
+      --error: #E24D4C;
+    }
+    body {
+      min-height: 100vh;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: yellow;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 1200px;
+      background: #1b1b1b;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      gap: 30px;
+    }
+
+    .form {
+      width: 100%;
+      max-width: 650px;
+    }
+
+    .form h2 {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .col {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .box {
+      width: 100%;
+      margin-top: 25px;
+    }
+
+    .col .box input,
+    .box textarea {
+      width: 100%;
+      height: 50px;
+      margin-top: 8px;
+      outline: none;
+      background-color: #3a3939;
+      border: 2px solid #1b1b1b;
+      border-radius: 5px;
+      font-size: 18px;
+      padding: 0 15px;
+      transition: 0.3s;
+    }
+
+    .col .box input::placeholder,
+    .box textarea::placeholder {
+      color: #797979;
+    }
+    .col .box input::placeholder,
+    .box textarea::placeholder {
+      color: #797979;
+    }
+
+
+    .col .box input:focus,
+    .box textarea:focus {
+      border-color: yellow;
+    }
+
+    .box textarea {
+      resize: none;
+      padding: 15px;
+      min-height: 200px;
+    }
+
+    .box label {
+      color: yellow;
+    }
+
+    .btn {
+      margin-top: 15px;
+      padding: 15px 50px;
+      background: yellow;
+      color: #1b1b1b;
+      outline: none;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: yellow;
+    }
+
+    .row {
+      width: 100%;
+      max-width: 470px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-info {
+      width: 100%;
+      padding: 25px;
+      background: #222;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .contact-info h2 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .info i {
+      width: 30px;
+      height: 30px;
+      background: yellow;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 50%;
+      font-size: 12px;
+    }
+
+    .socials i {
+      display: inline-block;
+      margin-top: 40px;
+      width: 45px;
+      height: 45px;
+      border: 1px solid #fff;
+      margin-right: 10px;
+      border-radius: 5px;
+      font-size: 20px;
+      text-align: center;
+      line-height: 45px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .socials i:hover {
+      background: #fff;
+      color: #222;
+    }
+    .socials a {
+        color: white;
+    }
+    .map iframe {
+      width: 100%;
+      height: 255px;
+      border-radius: 5px;
+    }
+    /* popup style  */
+      .notifications {
+        position: fixed;
+        top: 30px;
+        right: 20px;
+      }
+      .notifications .column {
+        display: flex;
+        align-items: center;
+      }
+      .notifications .toast {
+        width: 400px;
+        position: relative;
+        overflow: hidden;
+        list-style: none;
+        border-radius: 4px;
+        padding: 16px 17px;
+        margin-bottom: 10px;
+        background: var(--light);
+        justify-content: space-between;
+        animation: show_toast 0.3s ease forwards;
+      }
+      @keyframes show_toast {
+        0% {
+          transform: translateX(100%);
+        }
+        40% {
+          transform: translateX(-5%);
+        }
+        80% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-10px);
+        }
+      }
+      .notifications .toast.hide {
+        animation: hide_toast 0.3s ease forwards;
+      }
+      @keyframes hide_toast {
+        0% {
+          transform: translateX(-10px);
+        }
+        40% {
+          transform: translateX(0%);
+        }
+        80% {
+          transform: translateX(-5%);
+        }
+        100% {
+          transform: translateX(calc(100% + 20px));
+        }
+      }
+      .toast::before {
+        position: absolute;
+        content: "";
+        height: 3px;
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        animation: progress 5s linear forwards;
+      }
+      @keyframes progress {
+        100% {
+          width: 0%;
+        }
+      }
+      .toast.success::before, .btn#success {
+        background: var(--success);
+      }
+      .toast.error::before, .btn#error {
+        background: var(--error);
+      }
+      .toast .column i {
+        font-size: 1.75rem;
+      }
+      .toast.success .column i {
+        color: var(--success);
+      }
+      .toast.error .column i {
+        color: var(--error);
+      }
+      .toast .column span {
+        font-size: 1.07rem;
+        margin-left: 12px;
+      }
+      .toast i:last-child {
+        color: #aeb0d7;
+        cursor: pointer;
+      }
+      .toast i:last-child:hover {
+        color: var(--dark);
+      }
+      .buttons .btn {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin: 0 5px;
+        color: var(--light);
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-radius: 4px;
+      }
+
+    @media (max-width: 1050px) {
+      .wrapper {
+        flex-wrap: wrap;
+      }
+
+      .wrapper .form,
+      .wrapper .row {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .form .col {
+        flex-wrap: wrap;
+        gap: 0;
+      }
+
+      .form .col .box {
+        margin-top: 15px;
+      }
+      .notifications {
+          width: 95%;
+        }
+        .notifications .toast {
+          width: 100%;
+          font-size: 1rem;
+          margin-left: 20px;
+        }
+        .buttons .btn {
+          margin: 0 1px;
+          font-size: 1.1rem;
+          padding: 8px 15px;
+        }
+    }
+</style>
+  </head>
+  <body>
+    <ul class="notifications">
+        <div class="column" id="popup">
+          <i id="alert-icon"></i>
+          <span id="popup-text"></span>
+        </div>
+    </ul>
+    <section class="wrapper">
+      <form action="#" class="form" id="contact-form">
+        <div class="col">
+          <div class="box">
+            <label>First Name</label>
+            <input type="text" id="name" placeholder="Enter first name" required />
+          </div>
+          <div class="box">
+            <label>Last Name</label>
+            <input type="text" placeholder="Enter last name" required />
+          </div>
+        </div>
+        <div class="col">
+          <div class="box">
+            <label>Phone Number</label>
+            <input type="tel" id="mobile" placeholder="Enter phone number" required />
+          </div>
+          <div class="box">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="Enter email address" required />
+          </div>
+        </div>
+        <div class="box">
+          <label>Message</label>
+          <textarea id="message" placeholder="Write your message here" required></textarea>
+        </div>
+        <button class="btn" type="submit" onclick="sendMail(event)" >Send</button>
+      </form>
+
+      <div class="row">
+        <div class="contact-info">
+          <h2>Contact Info</h2>
+          <div class="info">
+            <i class="fas fa-location-dot"></i>
+            <span>135,4th Avanue, Sri ragavendira city, Neycer, Vadalur, TN-60703</span>
+          </div>
+          <div class="info">
+            <i class="fas fa-envelope"></i>
+            <span>felixffc@gmail.com</span>
+          </div>
+          <div class="info">
+            <i class="fas fa-phone"></i>
+            <span>+91 9842042148</span>
+          </div>
+
+          <div class="socials">
+            <a href="https://www.instagram.com/explore/locations/955580211/felix-fitness-club/"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/felixfitnessclb"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/felixfitnessclub/"><i class="fab fa-facebook-f"></i></a>
+            
+          </div>
+        </div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.851391025437!2d79.55356617324303!3d11.562509288638115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a54b781f34baaa5%3A0x17801c97da748df7!2sFelix%20Fitness%20Club!5e0!3m2!1sen!2sin!4v1738742452904!5m2!1sen!2sin"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
