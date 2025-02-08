@@ -433,7 +433,7 @@ section.offer{
 	position: relative;
 	width: 100%;
 	padding: 100px 8%;
-	background: url('/images/home/gym-bg.jpeg');
+	background: url('https://github.com/loki4374/gymsite/blob/42f814ae0a33657cc94e8b2187022fc2f387a59c/images/home/gym-bg.jpeg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
