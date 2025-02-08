@@ -22,13 +22,13 @@ html{
 	--light-text-clr:#ffffff;
 	--dark-text-clr:#171717;
 
-	overflow-X: clip;
+	
 }
 body{
 	width: 100%;
 	min-height: 100vh;
 	background-color: var(--dark-bg-clr);
-	
+	overflow-X: clip;
 }
 /*   === Reusable Code Starts ===   */
 button.btn{
@@ -913,7 +913,7 @@ section.pricing{
 		flex-direction: column;
 	}
 	.banner-left-contents img {
-		width: 450px !important;
+		width: 330px !important;
 		height:100px;
 		text-align: center;
 	}
@@ -922,7 +922,7 @@ section.pricing{
 		text-align: center;
 	}
 	.banner-right-contents h2 {
-		font-size: 3rem !important;
+		font-size: 2rem !important;
 	}
 	/* Facilities Section */
 	.facilities .facilities-contents{
